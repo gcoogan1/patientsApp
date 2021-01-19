@@ -4,6 +4,7 @@ import { PatientDispatchTypes, PATIENT_FAIL, PATIENT_LOADING, PATIENT_SUCCESS } 
 import { VISIT_FAIL, VISIT_LOADING, VISIT_SUCCESS, VisitDispatchTypes } from './ActionTypes/VisitActionTypes';
 import {PHYSICIAN_FAIL, PHYSICIAN_LOADING, PHYSICIAN_SUCCESS, PhysicianDispatchTypes} from './ActionTypes/PhysicianActionType';
 
+const url = process.env.REACT_APP_API_URL
 
 export const GetPatient = () => async(dispatch: Dispatch<PatientDispatchTypes>) =>{
     try {
@@ -11,7 +12,7 @@ export const GetPatient = () => async(dispatch: Dispatch<PatientDispatchTypes>) 
             type: PATIENT_LOADING
         })
 
-        const res= await axios.get(`https://us-central1-ferrum-dev.cloudfunctions.net/api/v1/patients`)
+        const res= await axios.get(`${url}/v1/patients`)
         
         dispatch({
             type: PATIENT_SUCCESS,
@@ -31,7 +32,7 @@ export const GetPatientVisits = (id: string) => async(dispatch: Dispatch<VisitDi
             type: VISIT_LOADING
         })
 
-        const res= await axios.get(`https://us-central1-ferrum-dev.cloudfunctions.net/api/v1/patients/${id}/visits`)
+        const res= await axios.get(`${url}/v1/patients/${id}/visits`)
         
         dispatch({
             type: VISIT_SUCCESS,
@@ -51,7 +52,7 @@ export const GetPhysician = (id: string) => async(dispatch: Dispatch<PhysicianDi
             type: PHYSICIAN_LOADING
         })
 
-        const res= await axios.get(`https://us-central1-ferrum-dev.cloudfunctions.net/api/v1/physicians/${id}`)
+        const res= await axios.get(`${url}/v1/physicians/${id}`)
         
         dispatch({
             type: PHYSICIAN_SUCCESS,
