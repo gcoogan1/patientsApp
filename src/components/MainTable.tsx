@@ -35,8 +35,13 @@ const MainTable: React.FC = () => {
     setPatientView(false)
   }
 
-  const goBack = () => {
+  const goBackPatients = () => {
       setPatientView(false)
+      setPhysicianView(false)
+  }
+
+  const goBackVisits = () =>{
+      setPatientView(true)
       setPhysicianView(false)
   }
 
@@ -88,7 +93,7 @@ const MainTable: React.FC = () => {
          {visitState.loading ? 	<Loader type="ThreeDots" color="#e85a4f" height={80} width={80} /> : (
            <>
             <div className="header_arrow">
-               <img onClick={goBack} src={Arrow} alt="back" />
+               <img onClick={goBackPatients} src={Arrow} alt="back" />
                <h2>Paitent Visits</h2>
           </div>
           <table>
@@ -128,7 +133,7 @@ const MainTable: React.FC = () => {
         {physicianState.loading ? 	<Loader type="ThreeDots" color="#e85a4f" height={80} width={80} /> : (
           <>
            <div className="header_arrow">
-             <img onClick={goBack} src={Arrow} alt="back" />
+             <img onClick={goBackVisits} src={Arrow} alt="back" />
              <h2>Physician Info</h2>
           </div>
          <table>
