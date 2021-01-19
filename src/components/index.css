@@ -1,0 +1,129 @@
+h2 {
+  font-weight: 300;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-right: 30px;
+  text-transform: capitalize;
+}
+
+.header_arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/*TABLE*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 400px;
+}
+
+tr {
+  background: #d8c3a5;
+}
+th {
+  background: #e98074;
+  border-spacing: inherit;
+  color: white;
+  font-weight: bold;
+}
+td,
+th {
+  padding: 10px;
+  border: 1px solid #e85a4f;
+  text-align: left;
+}
+
+td {
+  font-weight: 200;
+}
+
+.name {
+  color: #8e8d8a;
+}
+.name:hover {
+  color: #ee4e43;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 760px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #e85a4f;
+    margin: 10px;
+  }
+
+  td {
+    border: none;
+    position: relative;
+    padding-left: 100px;
+  }
+
+  td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  /* Label Data */
+  td:nth-of-type(1):before {
+    content: "First";
+  }
+  td:nth-of-type(2):before {
+    content: "Last";
+  }
+  td:nth-of-type(3):before {
+    content: "Email";
+  }
+  td:nth-of-type(4):before {
+    content: "Phone";
+  }
+  td:nth-of-type(5):before {
+    content: "Address";
+  }
+  td:nth-of-type(6):before {
+    content: "Since";
+  }
+  td:nth-of-type(7):before {
+    content: "Visits";
+    color: black;
+  }
+  /* Label Data -> visits */
+  .visit_td:nth-of-type(1):before {
+    content: "Location";
+  }
+  .visit_td:nth-of-type(2):before {
+    content: "Symptoms";
+  }
+  .visit_td:nth-of-type(3):before {
+    content: "Diagnosis";
+  }
+  .visit_td:nth-of-type(4):before {
+    content: "More Info";
+    color: black;
+  }
+}
